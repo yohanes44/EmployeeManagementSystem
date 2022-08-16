@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- <script>
+  $(function(){
+      $('#nav').load("header.html");
+  });
+</script> -->
+
+<style>
+
+               input{
+                width:10%;
+                margin: 8px;
+                border: 2px solid red;
+                border-radius: 4px;
+            }
+          
+
+/* input[type=text], input[type=number],input[type=email],input[type=password], select, textarea {
+  width: 80%;
+
+} */
+
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  /* padding: 12px 20px; */
+  border: none;
+  /* border-radius: 4px; */
+ 
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+</style>
+</head>
+<body>
+<!--     
+  <div id="nav"></div> -->
+
+<!-- remove header below -->
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dengene</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/adminHome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">My Page</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/delete">delete</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/adminRegister">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/updateAdmin">Update Employees</a>
+        </li>
+        
+          </ul>
+        </div>
+      </div>
+      <a class="navbar-brand" href="#">Dengene Employees Management System</a>
+    </nav>
+
+</div>
+
+
+
+
+
+
+<form action="/adminRegister" method="post" style="color:#45a049; border:15px solid darkslategray;border-radius: 6%; padding-right: 30px; margin: 15px; margin-right: 250px;">
+      
+        <div class="card" style="width:inherit">
+            <div class="card-body">
+
+              <div class="form-group row">
+                  <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-7">
+                  <input type="text" name="firstName" placeholder="Enter First Name" class="form-control" id="firstName">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                   <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-7">
+                   <input type="text" name="lastName" placeholder="Enter Last Name" class="form-control" id="lastName">
+                </div>
+              </div>
+
+                <div class="form-group row">
+                  <label for="position" class="col-sm-2 col-form-label">Position</label>
+                  <div class="col-sm-7">
+                     <input type="text" name="position" placeholder="Enter Position" class="form-control" id="position">
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+                  <div class="col-sm-7">
+                     <input type="number"  name="salary" placeholder="Enter Salary" class="form-control" id="salary">
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                  <div class="col-sm-7">
+                    <input type="number" name="phoneNumber" placeholder="Enter Phone Number" class="form-control" id="phoneNumber">                
+                  </div>
+                </div>
+
+                
+                <div class="form-group row">
+                  <label for="address" class="col-sm-2 col-form-label">Adress</label>
+                  <div class="col-sm-7">
+                    <input type="text" name="address" placeholder="Enter Address" class="form-control" id="address">
+                  </div>
+                </div>
+
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-2 pt-0">Role</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="gridRadios1" value="user" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                          user
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="role" id="gridRadios2" value="admin">
+                        <label class="form-check-label" for="gridRadios2">
+                          admin
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="form-group row">
+                  <label for="email" class="col-sm-2 col-form-label">Email address</label>
+                  <div class="col-sm-7">
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="password" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-7">
+                    <input type="password" name="password" placeholder="Enter Password" class="form-control" id="password">
+                  </div>
+                </div>
+
+                <div class="alert alert-danger" role="alert" id="error" style="display: none;"></div> 
+                <div class="alert alert-success" role="alert" id="success" style="display: none;"></div> 
+
+                <button type="submit" style="background: #04AA6D;" class="btn btn-primary" value="submit">Register</button>
+              
+          </div>
+    </div>
+  </form>
+    
+</body>
+</html>

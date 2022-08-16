@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+<!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+
+
+
+    <!-- <script>
+  $(function(){
+      $('#nav').load("header.html");
+  });
+</script> -->
+</head>
+<body ng-app="angApp" ng-controller="angCtrl">
+   <div id="nav"></div>
+
+<!-- remove header below -->
+<div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Dengene</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/employees">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+      <a class="navbar-brand" href="#">Dengene Employees Management System</a>
+    </nav>
+
+</div>
+<button ng-click="myUsers()">Show Angular Data</button>
+<h3>{{myArray}}</h3>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+            <th scope="col">Started Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Yohanes</td>
+            <td>Junior Solution Enginner</td>
+            <td>28/04/22</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Abenezer GebreMEdin</td>
+            <td>Junior Software Enginner</td>
+            <td>28/04/22</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Meti Abera</td>
+            <td>Junior Software Enginner</td>
+            <td>28/04/22</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Mesgana M</td>
+            <td>Software Enginner</td>
+            <td>06/09/19</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Mesgana M</td>
+            <td>Software Enginner</td>
+            <td>06/09/19</td>
+          </tr>
+        </tbody>
+      </table>
+
+<script src="employees.js">
+
+</script>
+<script>
+  const angApp = angular.module("angApp", []);
+  angApp.controller("angCtrl", [$scope, function($scope){
+    $scope.myUsers = function(){
+      $http.get("employees.js").success(function(data){
+        $scope.myArray = data;
+      })
+    }
+
+  }]);
+
+</script>
+
+</body>
+</html>
